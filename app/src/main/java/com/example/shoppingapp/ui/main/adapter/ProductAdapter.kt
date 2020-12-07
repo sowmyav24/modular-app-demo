@@ -23,7 +23,7 @@ class ProductAdapter (private val products: List<Product>) : RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(viewHolder: ProductAdapter.ViewHolder, position: Int) {
-        val product: Product = products.get(position)
+        val product: Product = products[position]
         val name = viewHolder.productName
         name.text = product.name
         val price = viewHolder.productPrice
