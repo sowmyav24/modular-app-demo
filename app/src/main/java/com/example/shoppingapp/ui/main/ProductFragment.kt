@@ -26,15 +26,15 @@ class ProductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val inflate = inflater.inflate(R.layout.product_fragment, container, false)
-        val rvContacts = inflate.findViewById<View>(R.id.products) as RecyclerView
+        val products = inflate.findViewById<View>(R.id.products) as RecyclerView
         val adapter = ProductAdapter(
             listOf(
-                Product("Milk", "20"),
-                Product("Bread", "12")
+                Product("Potato - Large 2Kg", "50"),
+                Product("Grapes - Green without seeds - 2Kg", "100")
             )
         )
-        rvContacts.adapter = adapter
-        rvContacts.layoutManager = LinearLayoutManager(this.activity)
+        products.adapter = adapter
+        products.layoutManager = LinearLayoutManager(requireContext())
         return inflate;
     }
 
@@ -42,5 +42,4 @@ class ProductFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
-
 }

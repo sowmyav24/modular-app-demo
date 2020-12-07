@@ -18,8 +18,8 @@ class ProductAdapter (private val products: List<Product>) : RecyclerView.Adapte
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductAdapter.ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val contactView = inflater.inflate(R.layout.product_item, parent, false)
-        return ViewHolder(contactView)
+        val productView = inflater.inflate(R.layout.product_item, parent, false)
+        return ViewHolder(productView)
     }
 
     override fun onBindViewHolder(viewHolder: ProductAdapter.ViewHolder, position: Int) {

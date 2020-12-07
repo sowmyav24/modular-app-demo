@@ -1,8 +1,9 @@
-package com.example.order
+package com.example.purchase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.order.ui.main.PurchaseFragment
+import com.example.order.R
+import com.example.purchase.ui.main.PurchaseFragment
 
 class PurchaseActivity : AppCompatActivity() {
 

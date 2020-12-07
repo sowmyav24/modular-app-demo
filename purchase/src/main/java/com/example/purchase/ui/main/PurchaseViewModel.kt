@@ -1,4 +1,4 @@
-package com.example.order.ui.main
+package com.example.purchase.ui.main
 
 import androidx.lifecycle.ViewModel
 
