@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppingapp.R
 import com.example.shoppingapp.ui.main.adapter.ProductAdapter
 import com.example.shoppingapp.domain.Product
+import com.example.shoppingapp.ui.MainViewModel
 
 class ProductFragment : Fragment() {
 
