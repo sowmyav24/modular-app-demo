@@ -35,7 +35,7 @@ class ProductFragment : Fragment() {
         )
         products.adapter = adapter
         products.layoutManager = LinearLayoutManager(requireContext())
-        return inflate;
+        return inflate
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
