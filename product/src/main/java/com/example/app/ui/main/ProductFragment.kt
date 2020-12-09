@@ -1,4 +1,4 @@
-package com.example.shoppingapp.ui.main
+package com.example.app.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shoppingapp.R
-import com.example.shoppingapp.ui.main.adapter.ProductAdapter
-import com.example.shoppingapp.domain.Product
-import com.example.shoppingapp.ui.MainViewModel
+import com.example.app.R
+import com.example.app.ui.main.adapter.ProductAdapter
+import com.example.app.domain.Product
+import com.example.app.ui.MainViewModel
 
 class ProductFragment : Fragment() {
 

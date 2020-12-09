@@ -1,10 +1,10 @@
-package com.example.shoppingapp
+package com.example.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.shoppingapp.ui.main.ProductFragment
+import com.example.app.ui.main.ProductFragment
 
-class MainActivity : AppCompatActivity() {
+class ProductActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

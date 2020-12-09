@@ -1,9 +1,9 @@
-package com.example.shoppingapp.ui.viewHolder
+package com.example.app.ui.viewHolder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shoppingapp.domain.Product
-import com.example.shoppingapp.ui.main.adapter.BuyNowListener
+import com.example.app.domain.Product
+import com.example.app.ui.main.adapter.BuyNowListener
 import kotlinx.android.synthetic.main.product_item.view.buy
 import kotlinx.android.synthetic.main.product_item.view.product_name
 import kotlinx.android.synthetic.main.product_item.view.product_price

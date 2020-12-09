@@ -1,11 +1,11 @@
-package com.example.shoppingapp.ui.main.adapter
+package com.example.app.ui.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shoppingapp.R
-import com.example.shoppingapp.domain.Product
-import com.example.shoppingapp.ui.viewHolder.ProductViewHolder
+import com.example.product.R
+import com.example.app.domain.Product
+import com.example.app.ui.viewHolder.ProductViewHolder
 
 class ProductAdapter(private val products: List<Product>) :
     RecyclerView.Adapter<ProductViewHolder>(), BuyNowListener {
