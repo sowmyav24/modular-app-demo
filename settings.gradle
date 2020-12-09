@@ -1,4 +1,3 @@
-include ':app'
 include ':instantbuy'
 include ':order'
 include ':app'
