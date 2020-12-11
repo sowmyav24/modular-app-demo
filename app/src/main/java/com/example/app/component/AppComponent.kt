@@ -1,22 +1,10 @@
 package com.example.app.component
 
-import android.app.Application
-import com.example.product.module.ActivityModule
-import dagger.BindsInstance
+import com.example.app.MainActivity
+import com.example.app.module.InstantBuyModule
 import dagger.Component
-import javax.inject.Singleton
 
-@Component(
-    modules = [ActivityModule::class]
-)
-@Singleton
+@Component(modules = [InstantBuyModule::class])
 interface AppComponent {
-
-    @Component.Builder
-    interface Builder {
-        @BindsInstance
-        fun application(application: Application): Builder
-
-        fun build(): AppComponent
-    }
+    fun inject(mainActivity: MainActivity)
 }
