@@ -6,9 +6,9 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.purchase.PurchaseActivity
 import javax.inject.Inject
 
-class InstantBuyInwardNavigator  @Inject constructor() {
+class PurchaseInwardNavigator  @Inject constructor() {
 
-    fun startInstantBuy(context: Context) {
+    fun startPurchase(context: Context) {
        startActivity(context, Intent(context, PurchaseActivity::class.java), null)
     }
 }
