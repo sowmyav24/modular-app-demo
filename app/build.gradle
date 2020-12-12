@@ -12,5 +12,5 @@ android {
 
 dependencies {
     implementation(project(":product"))
-    implementation(project(":instantbuy"))
+    implementation(project(':purchase'))
 }

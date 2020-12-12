@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InstantBuy</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="payment_mode">Payment Mode</string>
+    <string name="cod">COD</string>
+    <string name="netbanking">Netbanking</string>
+    <string name="complete_shopping">Complete shopping</string>
+</resources>

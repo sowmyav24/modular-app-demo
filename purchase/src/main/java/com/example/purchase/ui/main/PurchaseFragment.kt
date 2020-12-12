@@ -1,4 +1,4 @@
-package com.example.instantbuy.ui.main
+package com.example.purchase.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,26 +6,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.instantbuy.R
+import com.example.purchase.R
 
-class InstantBuyFragment : Fragment() {
+class PurchaseFragment : Fragment() {
 
     companion object {
-        fun newInstance() = InstantBuyFragment()
+        fun newInstance() = PurchaseFragment()
     }
 
-    private lateinit var viewModel: InstantBuyViewModel
+    private lateinit var viewModel: PurchaseViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.instant_buy_fragment, container, false)
+        return inflater.inflate(R.layout.purchase_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(InstantBuyViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

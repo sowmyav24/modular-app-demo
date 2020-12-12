@@ -1,7 +1,7 @@
 package com.example.app
 
 import android.content.Context
-import com.example.instantbuy.inwardNavigator.InstantBuyInwardNavigator
+import com.example.purchase.inwardNavigator.InstantBuyInwardNavigator
 import com.example.product.navigator.ProductOutwardNavigator
 
 class InstantBuyRouter(var instantBuyInwardNavigator: InstantBuyInwardNavigator) :

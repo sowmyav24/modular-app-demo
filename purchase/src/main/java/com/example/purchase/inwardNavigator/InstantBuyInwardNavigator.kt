@@ -1,14 +1,14 @@
-package com.example.instantbuy.inwardNavigator
+package com.example.purchase.inwardNavigator
 
 import android.content.Context
 import android.content.Intent
 import androidx.core.content.ContextCompat.startActivity
-import com.example.instantbuy.InstantBuyActivity
+import com.example.purchase.PurchaseActivity
 import javax.inject.Inject
 
 class InstantBuyInwardNavigator  @Inject constructor() {
 
     fun startInstantBuy(context: Context) {
-       startActivity(context, Intent(context, InstantBuyActivity::class.java), null)
+       startActivity(context, Intent(context, PurchaseActivity::class.java), null)
     }
 }
