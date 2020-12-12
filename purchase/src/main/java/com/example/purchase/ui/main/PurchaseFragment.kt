@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.purchase.R
+import kotlinx.android.synthetic.main.purchase_fragment.*
 
 class PurchaseFragment : Fragment() {
 
@@ -20,13 +21,15 @@ class PurchaseFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
         return inflater.inflate(R.layout.purchase_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        complete_purchase.setOnClickListener {
+            // TODO
+        }
     }
 
 }
