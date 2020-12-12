@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.app.component.DaggerAppComponent
 import com.example.product.ProductActivity
 import com.example.product.navigator.ProductOutwardNavigator
+import kotlinx.android.synthetic.main.main_activity.*
 import javax.inject.Inject
-import kotlinx.android.synthetic.main.main_activity.grocery
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +20,24 @@ class MainActivity : AppCompatActivity() {
         val create = DaggerAppComponent.create()
         create.inject(this)
         grocery.setOnClickListener {
-            startActivity(Intent(this, ProductActivity::class.java))
+            startProductActivity("Grocery")
         }
+        book.setOnClickListener {
+            startProductActivity("Books")
+        }
+        electronics.setOnClickListener {
+            startProductActivity("Electronics")
+
+        }
+        furniture.setOnClickListener {
+            startProductActivity("Furniture")
+
+        }
+    }
+
+    private fun startProductActivity(category: String) {
+        val intent = Intent(this, ProductActivity::class.java)
+        intent.putExtra("category", category)
+        startActivity(intent)
     }
 }

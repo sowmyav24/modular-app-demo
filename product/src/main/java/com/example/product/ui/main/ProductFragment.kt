@@ -1,19 +1,19 @@
 package com.example.product.ui.main
 
 import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.product.ProductDetailActivity
 import com.example.product.R
-import com.example.product.ui.main.adapter.ProductAdapter
 import com.example.product.domain.Product
-import com.example.product.ui.ProductViewModel
+import com.example.product.ui.main.adapter.ProductAdapter
+import com.example.product.viewmodel.ProductViewModel
 
 class ProductFragment : Fragment(), ProductDetailListener {
 
@@ -27,22 +27,15 @@ class ProductFragment : Fragment(), ProductDetailListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
         val inflate = inflater.inflate(R.layout.product_fragment, container, false)
         val products = inflate.findViewById<View>(R.id.products) as RecyclerView
-        val adapter = ProductAdapter(
-            listOf(
-                Product("Potato - Large 2Kg", 50),
-                Product("Grapes - Green without seeds - 2Kg", 100)
-            ), this
-        )
+        val category = arguments?.getString("category") ?: "Grocery"
+        val productList = viewModel.getProducts(category)
+        val adapter = ProductAdapter(productList, this)
         products.adapter = adapter
         products.layoutManager = LinearLayoutManager(requireContext())
         return inflate
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
     }
 
     override fun onProductDetailClick(product: Product) {
