@@ -17,6 +17,6 @@ class MainActivity : AppCompatActivity() {
         val create = DaggerAppComponent.create();
         create.inject(this)
 
-        instantBuyRouter.startInstantBuy(this)
+//        instantBuyRouter.startInstantBuy(this)
     }
 }

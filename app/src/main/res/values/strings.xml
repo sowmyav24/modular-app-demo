@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Shopping App</string>
     <string name="buy_now">Buy Now</string>
+    <string name="grocery">Grocery</string>
+    <string name="books">Books</string>
+    <string name="electronics">Electronics</string>
+    <string name="furniture">Furniture</string>
 </resources>
