@@ -1,3 +1,4 @@
+include ':cart'
 include ':product'
 include ':purchase'
 include ':app'
