@@ -13,7 +13,7 @@ import com.example.product.ProductDetailActivity
 import com.example.product.R
 import com.example.product.ui.main.adapter.ProductAdapter
 import com.example.product.domain.Product
-import com.example.product.ui.MainViewModel
+import com.example.product.ui.ProductViewModel
 
 class ProductFragment : Fragment(), ProductDetailListener {
 
@@ -21,7 +21,7 @@ class ProductFragment : Fragment(), ProductDetailListener {
         fun newInstance() = ProductFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: ProductViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +42,7 @@ class ProductFragment : Fragment(), ProductDetailListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
     }
 
     override fun onProductDetailClick(product: Product) {
