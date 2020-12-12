@@ -3,6 +3,7 @@ package com.example.product.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.product.ProductDetailListener
 import com.example.product.R
 import com.example.product.domain.Product
 
@@ -27,7 +28,7 @@ class ProductAdapter(private val products: List<Product>, val productDetailListe
     }
 
     override fun onBuyNow(position: Int) {
-        // TODO
+        productDetailListener.onBuyNow(products[position])
     }
 
     override fun onProductClick(position: Int) {
