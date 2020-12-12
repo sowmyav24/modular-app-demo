@@ -1,12 +1,11 @@
 package com.example.cart.navigator
 
 import android.content.Context
-import androidx.recyclerview.widget.RecyclerView
-import com.example.cart.domain.CartItem
+import com.example.cart.domain.CartProduct
 
 interface CartOutwardNavigator {
     fun startPurchase(
         context: Context,
-        cartItems: List<CartItem>
+        cartItems: List<CartProduct>
     )
 }

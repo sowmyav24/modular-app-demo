@@ -1,6 +1,8 @@
 package com.example.product.domain
 
-data class Product(val name: String, val price: Int, val category: String)
+import java.io.Serializable
+
+data class Product(val name: String, val price: Int, val category: String) : Serializable
 
 fun getAllProducts(): List<Product> {
     return listOf(

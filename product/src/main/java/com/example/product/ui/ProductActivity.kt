@@ -38,8 +38,7 @@ class ProductActivity : AppCompatActivity(), ProductDetailListener {
 
     override fun onProductDetailClick(product: Product) {
         val intent = Intent(applicationContext, ProductDetailActivity::class.java)
-        intent.putExtra("name", product.name)
-        intent.putExtra("price", product.price)
+        intent.putExtra("EXTRA_PRODUCT", product)
         startActivity(intent)
     }
 

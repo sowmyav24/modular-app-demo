@@ -9,7 +9,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class ProductOutwardRouterModule {
+class OutwardRouterModule {
 
     @Provides
     fun provideProductOutwardNavigator(productOutwardRouter: ProductOutwardRouter) : ProductOutwardNavigator {

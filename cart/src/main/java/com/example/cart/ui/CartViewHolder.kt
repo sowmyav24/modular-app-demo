@@ -2,7 +2,7 @@ package com.example.cart.ui
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cart.domain.CartItem
+import com.example.cart.domain.CartProduct
 import kotlinx.android.synthetic.main.cart_item.view.*
 
 class CartViewHolder(itemView: View) :
@@ -11,7 +11,7 @@ class CartViewHolder(itemView: View) :
     val productPrice = itemView.product_price
     val productQuantity = itemView.quantity
 
-    fun setData(cartItem: CartItem) {
+    fun setData(cartItem: CartProduct) {
         productName.text = cartItem.name
         productPrice.text = cartItem.price.toString()
         productQuantity.text = "Total Quantity ${cartItem.quantity}"
