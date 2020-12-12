@@ -1,5 +1,6 @@
 package com.example.app.component
 
+import com.example.app.CartActivityModule
 import com.example.app.MainActivity
 import com.example.app.MyApplication
 import com.example.app.MyApplicationModule
@@ -14,7 +15,8 @@ import dagger.android.AndroidInjector
     modules = [AndroidInjectionModule::class,
         MyApplicationModule::class,
         ProductActivityModule::class,
-        ProductOutwardRouterModule::class]
+        ProductOutwardRouterModule::class,
+        CartActivityModule::class]
 )
 interface AppComponent : AndroidInjector<MyApplication> {
     fun inject(mainActivity: MainActivity)
