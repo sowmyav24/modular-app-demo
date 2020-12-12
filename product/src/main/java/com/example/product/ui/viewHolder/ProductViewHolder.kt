@@ -22,6 +22,6 @@ class ProductViewHolder(itemView: View, productListener: ProductListener) :
 
     fun setData(product: Product) {
         productName.text = product.name
-        productPrice.text = product.price
+        productPrice.text = product.price.toString()
     }
 }

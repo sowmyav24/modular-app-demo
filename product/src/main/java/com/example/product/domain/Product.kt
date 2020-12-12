@@ -1,3 +1,3 @@
 package com.example.product.domain
 
-data class Product(val name: String, val price: String)
+data class Product(val name: String, val price: Int)

@@ -31,8 +31,8 @@ class ProductFragment : Fragment(), ProductDetailListener {
         val products = inflate.findViewById<View>(R.id.products) as RecyclerView
         val adapter = ProductAdapter(
             listOf(
-                Product("Potato - Large 2Kg", "50"),
-                Product("Grapes - Green without seeds - 2Kg", "100")
+                Product("Potato - Large 2Kg", 50),
+                Product("Grapes - Green without seeds - 2Kg", 100)
             ), this
         )
         products.adapter = adapter
@@ -46,7 +46,10 @@ class ProductFragment : Fragment(), ProductDetailListener {
     }
 
     override fun onProductDetailClick(product: Product) {
-        startActivity(Intent(context, ProductDetailActivity::class.java))
+        val intent = Intent(context, ProductDetailActivity::class.java)
+        intent.putExtra("name", product.name)
+        intent.putExtra("price", product.price)
+        startActivity(intent)
     }
 }
 
