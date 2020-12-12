@@ -7,4 +7,5 @@
     <string name="cod">COD</string>
     <string name="netbanking">Netbanking</string>
     <string name="complete_shopping">Complete shopping</string>
+    <string name="product_name">Product name</string>
 </resources>

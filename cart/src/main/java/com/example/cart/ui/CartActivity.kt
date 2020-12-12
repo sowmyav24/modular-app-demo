@@ -25,14 +25,15 @@ class CartActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cart)
         viewModel = ViewModelProvider(this).get(CartViewModel::class.java)
         val products = findViewById<View>(R.id.cart_products) as RecyclerView
+        val cartItems = viewModel.getAllCartItems()
         val adapter = CartAdapter(
-            viewModel.getAllCartItems()
+            cartItems
         )
         products.adapter = adapter
         products.layoutManager = LinearLayoutManager(this)
         cost.text = "${getString(R.string.total_cost)}${viewModel.getTotalCost()}"
         buy_now.setOnClickListener {
-            cartOutwardNavigator.startPurchase(this)
+            cartOutwardNavigator.startPurchase(this, cartItems)
         }
     }
 }

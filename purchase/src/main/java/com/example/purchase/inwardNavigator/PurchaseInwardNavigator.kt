@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class PurchaseInwardNavigator  @Inject constructor() {
 
-    fun startPurchase(context: Context) {
-       startActivity(context, Intent(context, PurchaseActivity::class.java), null)
+    fun startPurchase(context: Context, intent: Intent) {
+       startActivity(context, intent, null)
     }
 }
