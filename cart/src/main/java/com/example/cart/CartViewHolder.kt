@@ -10,9 +10,9 @@ class CartViewHolder(itemView: View) :
     val productPrice = itemView.product_price
     val productQuantity = itemView.quantity
 
-    fun setData(name: String, price: Int, quantity: Int) {
-        productName.text = name
-        productPrice.text = price.toString()
-        productQuantity.text = "Total Quantity $quantity"
+    fun setData(cartItem: CartItem) {
+        productName.text = cartItem.name
+        productPrice.text = cartItem.price.toString()
+        productQuantity.text = "Total Quantity ${cartItem.quantity}"
     }
 }
