@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.product.R
 import com.example.product.domain.Product
+import com.example.product.ui.main.ProductDetailListener
 import com.example.product.ui.viewHolder.ProductViewHolder
 
-class ProductAdapter(private val products: List<Product>) :
-    RecyclerView.Adapter<ProductViewHolder>(), BuyNowListener {
+class ProductAdapter(private val products: List<Product>, val productDetailListener: ProductDetailListener) :
+    RecyclerView.Adapter<ProductViewHolder>(), ProductListener  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val context = parent.context
@@ -29,8 +30,15 @@ class ProductAdapter(private val products: List<Product>) :
     override fun onBuyNow(position: Int) {
         // TODO
     }
+
+    override fun onProductClick(position: Int) {
+        productDetailListener.onProductDetailClick(products[position])
+    }
+
+
 }
 
-interface BuyNowListener {
+interface ProductListener {
     fun onBuyNow(position: Int)
+    fun onProductClick(position: Int)
 }

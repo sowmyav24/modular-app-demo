@@ -1,5 +1,6 @@
 package com.example.product.ui.main
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.product.ProductDetailActivity
 import com.example.product.R
 import com.example.product.ui.main.adapter.ProductAdapter
 import com.example.product.domain.Product
 import com.example.product.ui.MainViewModel
 
-class ProductFragment : Fragment() {
+class ProductFragment : Fragment(), ProductDetailListener {
 
     companion object {
         fun newInstance() = ProductFragment()
@@ -31,7 +33,7 @@ class ProductFragment : Fragment() {
             listOf(
                 Product("Potato - Large 2Kg", "50"),
                 Product("Grapes - Green without seeds - 2Kg", "100")
-            )
+            ), this
         )
         products.adapter = adapter
         products.layoutManager = LinearLayoutManager(requireContext())
@@ -42,4 +44,12 @@ class ProductFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
+
+    override fun onProductDetailClick(product: Product) {
+        startActivity(Intent(context, ProductDetailActivity::class.java))
+    }
+}
+
+interface ProductDetailListener {
+    fun onProductDetailClick(product: Product)
 }

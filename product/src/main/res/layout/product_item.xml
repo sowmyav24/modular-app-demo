@@ -1,7 +1,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/electronics"
+    android:id="@+id/product_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
@@ -23,7 +23,6 @@
             android:padding="4dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constrainedWidth="true"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Milk" />
 
