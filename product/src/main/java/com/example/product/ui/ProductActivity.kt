@@ -1,8 +1,8 @@
-package com.example.product
+package com.example.product.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.product.ui.main.ProductFragment
+import com.example.product.R
 
 class ProductActivity : AppCompatActivity() {
 

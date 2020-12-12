@@ -1,15 +1,14 @@
-package com.example.product.ui.main.adapter
+package com.example.product.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.product.R
 import com.example.product.domain.Product
-import com.example.product.ui.main.ProductDetailListener
-import com.example.product.ui.viewHolder.ProductViewHolder
 
 class ProductAdapter(private val products: List<Product>, val productDetailListener: ProductDetailListener) :
-    RecyclerView.Adapter<ProductViewHolder>(), ProductListener  {
+    RecyclerView.Adapter<ProductViewHolder>(),
+    ProductListener {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val context = parent.context

@@ -3,10 +3,8 @@ package com.example.app
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.product.ProductActivity
-import com.example.product.navigator.ProductOutwardNavigator
+import com.example.product.ui.ProductActivity
 import kotlinx.android.synthetic.main.main_activity.*
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

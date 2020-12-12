@@ -1,4 +1,4 @@
-package com.example.product.ui.main
+package com.example.product.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,13 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.product.ProductDetailActivity
 import com.example.product.R
 import com.example.product.domain.Product
-import com.example.product.ui.main.adapter.ProductAdapter
 import com.example.product.viewmodel.ProductViewModel
 
-class ProductFragment : Fragment(), ProductDetailListener {
+class ProductFragment : Fragment(),
+    ProductDetailListener {
 
     companion object {
         fun newInstance() = ProductFragment()

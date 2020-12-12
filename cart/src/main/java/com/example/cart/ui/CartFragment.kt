@@ -1,4 +1,4 @@
-package com.example.cart
+package com.example.cart.ui
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cart.R
+import com.example.cart.viewmodel.CartViewModel
 import kotlinx.android.synthetic.main.cart_fragment.cost
 
 class CartFragment : Fragment() {

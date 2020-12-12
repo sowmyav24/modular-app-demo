@@ -1,7 +1,8 @@
-package com.example.cart
+package com.example.cart.ui
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cart.domain.CartItem
 import kotlinx.android.synthetic.main.cart_item.view.*
 
 class CartViewHolder(itemView: View) :

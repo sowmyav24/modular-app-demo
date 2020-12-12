@@ -1,15 +1,20 @@
-package com.example.cart
+package com.example.purchase.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.purchase.R
 
-class CartActivity : AppCompatActivity() {
+class PurchaseActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cart)
+        setContentView(R.layout.activity_purchase)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, CartFragment.newInstance())
+                .replace(
+                    R.id.container,
+                    PurchaseFragment.newInstance()
+                )
                 .commitNow()
         }
     }

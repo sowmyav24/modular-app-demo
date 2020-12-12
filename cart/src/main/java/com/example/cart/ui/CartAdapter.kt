@@ -1,8 +1,10 @@
-package com.example.cart
+package com.example.cart.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cart.R
+import com.example.cart.domain.CartItem
 
 class CartAdapter(private val cartItems: List<CartItem>) :
     RecyclerView.Adapter<CartViewHolder>()  {

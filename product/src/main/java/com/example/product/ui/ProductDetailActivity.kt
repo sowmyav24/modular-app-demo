@@ -1,7 +1,8 @@
-package com.example.product
+package com.example.product.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.product.R
 import kotlinx.android.synthetic.main.product_detail.product_name
 import kotlinx.android.synthetic.main.product_detail.product_price
 

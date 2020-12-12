@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoppingApp">
-        <activity android:name="com.example.product.ProductActivity">
+        <activity android:name="com.example.product.ui.ProductActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.product.ProductDetailActivity">
+        <activity android:name="com.example.product.ui.ProductDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
