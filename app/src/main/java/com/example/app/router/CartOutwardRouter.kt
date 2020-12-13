@@ -25,6 +25,6 @@ class CartOutwardRouter @Inject constructor(var purchaseInwardNavigator: Purchas
     }
 
     private fun CartProduct.toPurchaseProduct(): PurchaseProduct {
-        return PurchaseProduct(name)
+        return PurchaseProduct(name, price)
     }
 }

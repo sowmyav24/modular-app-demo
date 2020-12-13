@@ -16,7 +16,7 @@ class ProductOutwardRouter @Inject constructor(var purchaseInwardNavigator: Purc
         product: Product
     ) {
         val intent = Intent(context, PurchaseActivity::class.java)
-        val purchaseProduct = PurchaseProduct(product.name)
+        val purchaseProduct = PurchaseProduct(product.name, product.price)
         intent.putParcelableArrayListExtra("PURCHASE_PRODUCT_EXTRA", arrayListOf(purchaseProduct))
         purchaseInwardNavigator.startPurchase(context, intent)
     }
