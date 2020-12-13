@@ -11,7 +11,7 @@ class CartService @Inject constructor() {
         addItem(cartProduct)
     }
 
-    fun clearCart() {
+    fun clear() {
         removeItems()
     }
 }

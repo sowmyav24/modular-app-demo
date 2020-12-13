@@ -5,4 +5,4 @@ import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
 @Parcelize
-data class PurchaseProduct(val name: String, val price: Int) : Serializable, Parcelable
+data class PurchaseProduct(val name: String, val price: Int): Parcelable

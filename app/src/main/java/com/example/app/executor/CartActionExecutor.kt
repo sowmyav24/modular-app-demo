@@ -10,7 +10,7 @@ class CartActionExecutor @Inject constructor(private val cartService: CartServic
     CartAction, com.example.product.action.CartAction {
 
     override fun clearCart() {
-        cartService.clearCart()
+        cartService.clear()
     }
 
     override fun addToCart(product: Product) {
