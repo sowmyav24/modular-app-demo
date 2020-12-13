@@ -6,10 +6,20 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/products_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Products" />
+
+   <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
+        android:textColor="@color/black"
         tools:text="@string/product_name" />
 
     <com.google.android.material.textfield.TextInputLayout

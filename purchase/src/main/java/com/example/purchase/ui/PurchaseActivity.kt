@@ -28,9 +28,11 @@ class PurchaseActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         viewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
         super.onCreate(savedInstanceState)
-        val purchaseProduct = intent.getSerializableExtra("PURCHASE_PRODUCT_EXTRA") as? PurchaseProduct
+        val purchaseProducts = intent.getParcelableArrayListExtra<PurchaseProduct>("PURCHASE_PRODUCT_EXTRA") as? ArrayList<PurchaseProduct>
         setContentView(R.layout.activity_purchase)
-        name.text = purchaseProduct?.name ?: ""
+        var productNames = ""
+        purchaseProducts?.forEach { productNames = productNames + " " + it.name + '\n' }
+        name.text = productNames
         complete_purchase.setOnClickListener {
             cartAction.clearCart()
             completeShopping()
