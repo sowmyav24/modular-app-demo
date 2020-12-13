@@ -19,14 +19,7 @@ import javax.inject.Inject
 class ProductActivity : AppCompatActivity(), ProductDetailListener {
     private lateinit var viewModel: ProductViewModel
 
-    @Inject
-    lateinit var productOutwardNavigator: ProductOutwardNavigator
-
-    @Inject
-    lateinit var cartAction: CartAction
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
         val category = intent.getStringExtra("category") ?: ""
@@ -44,10 +37,5 @@ class ProductActivity : AppCompatActivity(), ProductDetailListener {
         val intent = Intent(applicationContext, ProductDetailActivity::class.java)
         intent.putExtra("EXTRA_PRODUCT", product)
         startActivity(intent)
-    }
-
-    override fun onBuyNow(product: Product) {
-        cartAction.addToCart(product)
-        productOutwardNavigator.startPurchase(this, product)
     }
 }

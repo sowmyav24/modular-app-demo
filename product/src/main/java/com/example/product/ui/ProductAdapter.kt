@@ -27,10 +27,6 @@ class ProductAdapter(private val products: List<Product>, val productDetailListe
         holder.setData(product)
     }
 
-    override fun onBuyNow(position: Int) {
-        productDetailListener.onBuyNow(products[position])
-    }
-
     override fun onProductClick(position: Int) {
         productDetailListener.onProductDetailClick(products[position])
     }
@@ -39,6 +35,5 @@ class ProductAdapter(private val products: List<Product>, val productDetailListe
 }
 
 interface ProductListener {
-    fun onBuyNow(position: Int)
     fun onProductClick(position: Int)
 }
