@@ -1,4 +1,4 @@
-package com.example.product
+package com.example.app.module
 
 import com.example.product.ui.ProductDetailActivity
 import dagger.Module
@@ -6,7 +6,8 @@ import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class ProductDetailActivityModule {
-    @ActivityScope
-    @ContributesAndroidInjector(modules = [])
+
+    @com.example.app.module.ActivityScope
+    @ContributesAndroidInjector(modules = [ProductModule::class])
     abstract fun contributeProductDetailActivity(): ProductDetailActivity
 }

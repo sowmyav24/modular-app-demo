@@ -1,13 +1,12 @@
-package com.example.app
+package com.example.app.module
 
 import com.example.cart.ui.CartActivity
-import com.example.product.ui.ProductActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class CartActivityModule {
     @ActivityScope
-    @ContributesAndroidInjector(modules = [])
+    @ContributesAndroidInjector(modules = [CartModule::class])
     abstract fun contributeCartActivity(): CartActivity
 }
