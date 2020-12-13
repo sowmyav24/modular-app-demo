@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.product.ProductDetailListener
 import com.example.product.R
+import com.example.product.action.ProductAction
 import com.example.product.domain.Product
 import com.example.product.navigator.ProductOutwardNavigator
 import com.example.product.viewmodel.ProductViewModel
@@ -20,6 +21,9 @@ class ProductActivity : AppCompatActivity(), ProductDetailListener {
 
     @Inject
     lateinit var productOutwardNavigator: ProductOutwardNavigator
+
+    @Inject
+    lateinit var productAction: ProductAction
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -43,6 +47,7 @@ class ProductActivity : AppCompatActivity(), ProductDetailListener {
     }
 
     override fun onBuyNow(product: Product) {
+        productAction.addToCart(product)
         productOutwardNavigator.startPurchase(this, product)
     }
 }

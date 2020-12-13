@@ -36,6 +36,7 @@ class ProductDetailActivity : AppCompatActivity() {
         }
         buy.setOnClickListener {
             product?.let {
+                productAction.addToCart(product)
                 productOutwardNavigator.startPurchase(this, product)
             }
         }
