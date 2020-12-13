@@ -2,6 +2,9 @@ package com.example.product.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import com.example.product.R
 import com.example.product.action.CartAction
 import com.example.product.domain.Product
@@ -39,6 +42,22 @@ class ProductDetailActivity : AppCompatActivity() {
                 cartAction.addToCart(product)
                 productOutwardNavigator.startPurchase(this, product)
             }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.product_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.nav_cart -> {
+                productOutwardNavigator.startCart(this)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
