@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
         return when (item.itemId) {
             R.id.nav_cart -> {
                 startActivity(Intent(this, CartActivity::class.java))
