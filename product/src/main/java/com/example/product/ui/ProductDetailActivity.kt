@@ -3,7 +3,7 @@ package com.example.product.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.product.R
-import com.example.product.action.ProductAction
+import com.example.product.action.CartAction
 import com.example.product.domain.Product
 import com.example.product.navigator.ProductOutwardNavigator
 import dagger.android.AndroidInjection
@@ -16,7 +16,7 @@ import javax.inject.Inject
 class ProductDetailActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var productAction: ProductAction
+    lateinit var cartAction: CartAction
     @Inject
     lateinit var productOutwardNavigator: ProductOutwardNavigator
 
@@ -31,12 +31,12 @@ class ProductDetailActivity : AppCompatActivity() {
         }
         add.setOnClickListener {
             product?.let {
-                productAction.addToCart(it)
+                cartAction.addToCart(it)
             }
         }
         buy.setOnClickListener {
             product?.let {
-                productAction.addToCart(product)
+                cartAction.addToCart(product)
                 productOutwardNavigator.startPurchase(this, product)
             }
         }
