@@ -4,4 +4,5 @@ import com.example.product.domain.Product
 
 interface CartAction {
     fun addToCart(product: Product)
+    fun getCartCount(): Int
 }

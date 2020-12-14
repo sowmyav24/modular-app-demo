@@ -17,6 +17,10 @@ class CartActionExecutor @Inject constructor(private val cartService: CartServic
         cartService.add(product.toCartProduct())
     }
 
+    override fun getCartCount(): Int {
+        return cartService.getCartCount()
+    }
+
     private fun Product.toCartProduct(): CartProduct {
         return CartProduct(name, price, 1)
     }
