@@ -22,8 +22,10 @@ class PurchaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        val purchaseProducts = intent.getParcelableArrayListExtra<PurchaseProduct>("PURCHASE_PRODUCT_EXTRA") as? ArrayList<PurchaseProduct>
         setContentView(R.layout.activity_purchase)
+
+        val purchaseProducts = intent.getParcelableArrayListExtra<PurchaseProduct>("PURCHASE_PRODUCT_EXTRA") as? ArrayList<PurchaseProduct>
+
         var productNames = ""
         purchaseProducts?.forEach { productNames = productNames + " " + it.name + '\n' }
         name.text = productNames

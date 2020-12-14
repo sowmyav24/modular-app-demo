@@ -18,6 +18,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
     @Inject
     lateinit var cartAction: CartAction
+
     @Inject
     lateinit var productOutwardNavigator: ProductOutwardNavigator
 
@@ -26,21 +27,19 @@ class ProductDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_detail)
 
-        val product = intent.getParcelableExtra("EXTRA_PRODUCT") as? Product
-        product?.let {
-            product_name.text = it.name
-            product_price.text = getString(R.string.price) + it.price.toString();
-        }
-        add.setOnClickListener {
-            product?.let {
-                cartAction.addToCart(it)
+        val product : Product? = intent.getParcelableExtra("EXTRA_PRODUCT")
+        product?.let { p ->
+            product_name.text = p.name
+            product_price.text = getString(R.string.price) + p.price.toString()
+
+            add.setOnClickListener {
+                cartAction.addToCart(p)
                 Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show()
             }
-        }
-        buy.setOnClickListener {
-            product?.let {
-                cartAction.addToCart(product)
-                productOutwardNavigator.startPurchase(this, product)
+
+            buy.setOnClickListener {
+                cartAction.addToCart(p)
+                productOutwardNavigator.startPurchase(this, p)
             }
         }
     }
