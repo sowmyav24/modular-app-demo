@@ -1,19 +1,16 @@
 package com.example.product.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.example.product.R
 import com.example.product.action.CartAction
 import com.example.product.domain.Product
 import com.example.product.navigator.ProductOutwardNavigator
 import dagger.android.AndroidInjection
-import kotlinx.android.synthetic.main.product_detail.add
-import kotlinx.android.synthetic.main.product_detail.buy
-import kotlinx.android.synthetic.main.product_detail.product_name
-import kotlinx.android.synthetic.main.product_detail.product_price
+import kotlinx.android.synthetic.main.product_detail.*
 import javax.inject.Inject
 
 class ProductDetailActivity : AppCompatActivity() {

@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import com.example.cart.domain.CartProduct
 import com.example.cart.navigator.CartOutwardNavigator
-import com.example.product.domain.Product
 import com.example.purchase.PurchaseProduct
 import com.example.purchase.inwardNavigator.PurchaseInwardNavigator
 import com.example.purchase.ui.PurchaseActivity

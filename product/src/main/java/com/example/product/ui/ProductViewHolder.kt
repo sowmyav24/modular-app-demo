@@ -3,9 +3,7 @@ package com.example.product.ui
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.product.domain.Product
-import kotlinx.android.synthetic.main.product_item.view.product_item
-import kotlinx.android.synthetic.main.product_item.view.product_name
-import kotlinx.android.synthetic.main.product_item.view.product_price
+import kotlinx.android.synthetic.main.product_item.view.*
 
 class ProductViewHolder(itemView: View, productListener: ProductListener) :
     RecyclerView.ViewHolder(itemView) {

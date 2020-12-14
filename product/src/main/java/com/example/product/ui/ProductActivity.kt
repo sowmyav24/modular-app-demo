@@ -9,12 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.product.ProductDetailListener
 import com.example.product.R
-import com.example.product.action.CartAction
 import com.example.product.domain.Product
-import com.example.product.navigator.ProductOutwardNavigator
 import com.example.product.viewmodel.ProductViewModel
-import dagger.android.AndroidInjection;
-import javax.inject.Inject
 
 class ProductActivity : AppCompatActivity(), ProductDetailListener {
     private lateinit var viewModel: ProductViewModel

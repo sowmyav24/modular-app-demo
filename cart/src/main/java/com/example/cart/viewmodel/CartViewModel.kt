@@ -1,7 +1,10 @@
 package com.example.cart.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.cart.domain.*
+import com.example.cart.domain.CartProduct
+import com.example.cart.domain.addItem
+import com.example.cart.domain.getAllItems
+import com.example.cart.domain.removeItems
 
 class CartViewModel : ViewModel() {
 
