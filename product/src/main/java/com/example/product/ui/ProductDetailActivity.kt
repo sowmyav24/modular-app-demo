@@ -25,7 +25,8 @@ class ProductDetailActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_detail)
-        val product = intent.getSerializableExtra("EXTRA_PRODUCT") as? Product
+
+        val product = intent.getParcelableExtra("EXTRA_PRODUCT") as? Product
         product?.let {
             product_name.text = it.name
             product_price.text = getString(R.string.price) + it.price.toString();

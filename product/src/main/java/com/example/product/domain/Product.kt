@@ -1,8 +1,10 @@
 package com.example.product.domain
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class Product(val name: String, val price: Int, val category: String) : Serializable
+@Parcelize
+data class Product(val name: String, val price: Int, val category: String) : Parcelable
 
 fun getAllProducts(): List<Product> {
     return listOf(
