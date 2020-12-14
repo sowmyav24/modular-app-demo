@@ -5,17 +5,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.product.domain.Product
 import kotlinx.android.synthetic.main.product_item.view.*
 
-class ProductViewHolder(itemView: View, productListener: ProductListener) :
+class ProductViewHolder(itemView: View, onClick: (Int) -> Unit) :
     RecyclerView.ViewHolder(itemView) {
-    val productName = itemView.product_name
-    val productPrice = itemView.product_price
 
-    private val itemClick = itemView.product_item.setOnClickListener {
-        productListener.onProductClick(adapterPosition);
+    init {
+        itemView.product_item.setOnClickListener {
+            onClick(adapterPosition)
+        }
     }
 
     fun setData(product: Product) {
-        productName.text = product.name
-        productPrice.text = product.price.toString()
+        itemView.product_name.text = product.name
+        itemView.product_price.text = product.price.toString()
     }
 }
