@@ -12,7 +12,7 @@ import com.example.product.R
 import com.example.product.domain.Product
 import com.example.product.viewmodel.ProductViewModel
 
-class ProductActivity : AppCompatActivity(), ProductDetailListener {
+class ProductListActivity : AppCompatActivity(), ProductDetailListener {
     private lateinit var viewModel: ProductViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

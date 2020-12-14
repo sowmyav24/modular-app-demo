@@ -7,7 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cart.ui.CartActivity
-import com.example.product.ui.ProductActivity
+import com.example.product.ui.ProductListActivity
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startProductActivity(category: String) {
-        val intent = Intent(this, ProductActivity::class.java)
+        val intent = Intent(this, ProductListActivity::class.java)
         intent.putExtra("category", category)
         startActivity(intent)
     }
