@@ -1,22 +1,18 @@
 package com.example.cart.domain
 
-data class CartProduct(val name: String, val price: Int, val quantity: Int)
+data class CartProduct(val name: String, val price: Int, var quantity: Int)
 
-var cartItems = mutableListOf(
-    CartProduct("Potato - Large 2Kg", 50, 2),
-    CartProduct(
-        "Grapes - Green without seeds - 2Kg",
-        100,
-        2
-    )
-)
+var cartItems = mutableListOf<CartProduct>()
 
 fun getAllItems(): List<CartProduct> {
     return cartItems
 }
 
 fun addItem(cartItem: CartProduct) {
-    cartItems.add(cartItem)
+    val cartItemPresent = cartItems.find { it.name == cartItem.name }
+    cartItemPresent?.let {
+        it.quantity += 1
+    } ?: cartItems.add(cartItem)
 }
 
 fun removeItems() {
