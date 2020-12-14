@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
 import com.example.product.R
 import com.example.product.action.CartAction
 import com.example.product.domain.Product
@@ -32,6 +33,7 @@ class ProductDetailActivity : AppCompatActivity() {
         add.setOnClickListener {
             product?.let {
                 cartAction.addToCart(it)
+                Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show()
             }
         }
         buy.setOnClickListener {
