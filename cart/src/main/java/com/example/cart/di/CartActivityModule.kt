@@ -6,8 +6,8 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-abstract class CartActivityModule {
+interface CartActivityModule {
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun contributeCartActivity(): CartActivity
+    fun contributeCartActivity(): CartActivity
 }

@@ -3,15 +3,13 @@ package com.example.app.di
 import com.example.app.router.CartOutwardRouter
 import com.example.cart.di.CartActivityModule
 import com.example.cart.navigator.outward.CartOutwardNavigator
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module(includes = [CartActivityModule::class])
-class CartModule {
+interface CartModule {
 
-    @Provides
-    fun provideCartOutwardRouter(cartOutwardRouter: CartOutwardRouter): CartOutwardNavigator {
-        return cartOutwardRouter
-    }
+    @Binds
+    fun provideCartOutwardRouter(cartOutwardRouter: CartOutwardRouter): CartOutwardNavigator
 
 }

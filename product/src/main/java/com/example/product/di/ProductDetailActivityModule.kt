@@ -6,9 +6,9 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-abstract class ProductDetailActivityModule {
+interface ProductDetailActivityModule {
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun contributeProductDetailActivity(): ProductDetailActivity
+    fun contributeProductDetailActivity(): ProductDetailActivity
 }

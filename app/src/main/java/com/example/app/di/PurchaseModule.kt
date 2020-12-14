@@ -4,18 +4,14 @@ import com.example.app.executor.CartActionExecutor
 import com.example.app.router.PurchaseOutwardRouter
 import com.example.purchase.di.PurchaseActivityModule
 import com.example.purchase.navigator.outward.PurchaseOutwardNavigator
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 
 @Module(includes = [PurchaseActivityModule::class])
-class PurchaseModule {
-    @Provides
-    fun providePurchaseOutwardRouter(purchaseOutwardRouter: PurchaseOutwardRouter) : PurchaseOutwardNavigator {
-        return purchaseOutwardRouter
-    }
+interface PurchaseModule {
+    @Binds
+    fun providePurchaseOutwardRouter(purchaseOutwardRouter: PurchaseOutwardRouter) : PurchaseOutwardNavigator
 
-    @Provides
-    fun provideCartAction(cartActionExecutor: CartActionExecutor): com.example.purchase.action.CartAction {
-        return cartActionExecutor
-    }
+    @Binds
+    fun provideCartAction(cartActionExecutor: CartActionExecutor): com.example.purchase.action.CartAction
 }
