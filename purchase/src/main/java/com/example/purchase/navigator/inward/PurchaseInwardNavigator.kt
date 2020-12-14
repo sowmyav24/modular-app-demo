@@ -1,4 +1,4 @@
-package com.example.purchase.inwardNavigator
+package com.example.purchase.navigator.inward
 
 import android.content.Context
 import android.content.Intent

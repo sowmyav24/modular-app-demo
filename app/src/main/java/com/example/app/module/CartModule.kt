@@ -1,7 +1,7 @@
 package com.example.app.module
 
 import com.example.app.router.CartOutwardRouter
-import com.example.cart.navigator.CartOutwardNavigator
+import com.example.cart.navigator.outward.CartOutwardNavigator
 import dagger.Module
 import dagger.Provides
 

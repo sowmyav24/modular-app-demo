@@ -1,4 +1,4 @@
-package com.example.cart
+package com.example.cart.service
 
 import com.example.cart.domain.CartProduct
 import com.example.cart.domain.addItem

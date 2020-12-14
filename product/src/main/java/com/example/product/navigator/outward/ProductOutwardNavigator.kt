@@ -1,4 +1,4 @@
-package com.example.product.navigator
+package com.example.product.navigator.outward
 
 import android.content.Context
 import com.example.product.domain.Product

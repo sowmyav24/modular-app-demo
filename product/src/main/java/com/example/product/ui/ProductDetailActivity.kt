@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.example.product.R
 import com.example.product.action.CartAction
 import com.example.product.domain.Product
-import com.example.product.navigator.ProductOutwardNavigator
+import com.example.product.navigator.outward.ProductOutwardNavigator
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.product_detail.*
 import javax.inject.Inject

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cart.R
-import com.example.cart.navigator.CartOutwardNavigator
+import com.example.cart.navigator.outward.CartOutwardNavigator
 import com.example.cart.viewmodel.CartViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_cart.*

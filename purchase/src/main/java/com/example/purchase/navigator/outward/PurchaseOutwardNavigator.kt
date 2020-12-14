@@ -1,4 +1,4 @@
-package com.example.purchase
+package com.example.purchase.navigator.outward
 
 import android.content.Context
 

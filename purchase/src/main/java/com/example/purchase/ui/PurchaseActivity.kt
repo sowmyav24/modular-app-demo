@@ -3,8 +3,8 @@ package com.example.purchase.ui
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.purchase.PurchaseOutwardNavigator
-import com.example.purchase.PurchaseProduct
+import com.example.purchase.navigator.outward.PurchaseOutwardNavigator
+import com.example.purchase.domain.PurchaseProduct
 import com.example.purchase.R
 import com.example.purchase.action.CartAction
 import dagger.android.AndroidInjection

@@ -1,6 +1,6 @@
 package com.example.app.executor
 
-import com.example.cart.CartService
+import com.example.cart.service.CartService
 import com.example.cart.domain.CartProduct
 import com.example.product.domain.Product
 import com.example.purchase.action.CartAction

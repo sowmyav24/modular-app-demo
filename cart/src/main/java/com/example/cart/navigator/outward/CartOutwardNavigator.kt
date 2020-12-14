@@ -1,4 +1,4 @@
-package com.example.cart.navigator
+package com.example.cart.navigator.outward
 
 import android.content.Context
 import com.example.cart.domain.CartProduct

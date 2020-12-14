@@ -1,4 +1,4 @@
-package com.example.cart.inwardnavigator
+package com.example.cart.navigator.inward
 
 import android.content.Context
 import android.content.Intent
