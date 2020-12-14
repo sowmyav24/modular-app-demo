@@ -2,6 +2,7 @@ package com.example.app.di
 
 import com.example.app.executor.CartActionExecutor
 import com.example.app.router.PurchaseOutwardRouter
+import com.example.purchase.di.PurchaseActivityModule
 import com.example.purchase.navigator.outward.PurchaseOutwardNavigator
 import dagger.Module
 import dagger.Provides

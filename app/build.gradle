@@ -14,4 +14,5 @@ dependencies {
     implementation(project(":product"))
     implementation(project(':purchase'))
     implementation(project(':cart'))
+    implementation(project(':util'))
 }
