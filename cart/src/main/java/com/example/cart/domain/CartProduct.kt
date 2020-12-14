@@ -1,6 +1,8 @@
 package com.example.cart.domain
 
-data class CartProduct(val name: String, val price: Int, var quantity: Int)
+import java.math.BigDecimal
+
+data class CartProduct(val name: String, val price: BigDecimal, var quantity: Int)
 
 var cartItems = mutableListOf<CartProduct>()
 

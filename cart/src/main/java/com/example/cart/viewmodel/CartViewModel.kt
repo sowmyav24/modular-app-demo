@@ -3,6 +3,7 @@ package com.example.cart.viewmodel
 import androidx.lifecycle.ViewModel
 import com.example.cart.domain.CartProduct
 import com.example.cart.domain.getAllItems
+import java.math.BigDecimal
 
 class CartViewModel : ViewModel() {
 
@@ -10,7 +11,9 @@ class CartViewModel : ViewModel() {
         return getAllItems()
     }
 
-    fun getTotalCost(): Int {
-        return getAllItems().sumBy { it.price * it.quantity }
+    fun getTotalCost(): BigDecimal {
+        return getAllItems()
+            .map { it.price.multiply(BigDecimal(it.quantity)) }
+            .fold(BigDecimal.ZERO, BigDecimal::add)
     }
 }

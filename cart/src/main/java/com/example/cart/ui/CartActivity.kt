@@ -11,6 +11,7 @@ import com.example.cart.navigator.outward.CartOutwardNavigator
 import com.example.cart.viewmodel.CartViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_cart.*
+import java.text.DecimalFormat
 import javax.inject.Inject
 
 class CartActivity : AppCompatActivity() {
@@ -31,7 +32,8 @@ class CartActivity : AppCompatActivity() {
         )
         products.adapter = adapter
         products.layoutManager = LinearLayoutManager(this)
-        cost.text = "${getString(R.string.total_cost)}${viewModel.getTotalCost()}"
+        val totalCost = DecimalFormat("###0.00").format( viewModel.getTotalCost())
+        cost.text = "${getString(R.string.total_cost)}$totalCost"
         buy_now.setOnClickListener {
             cartOutwardNavigator.startPurchase(this, cartItems)
         }

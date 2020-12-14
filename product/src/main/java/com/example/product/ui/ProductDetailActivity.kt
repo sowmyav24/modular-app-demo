@@ -14,6 +14,7 @@ import com.example.product.domain.Product
 import com.example.product.navigator.outward.ProductOutwardNavigator
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.product_detail.*
+import java.text.DecimalFormat
 import javax.inject.Inject
 
 
@@ -34,11 +35,13 @@ class ProductDetailActivity : AppCompatActivity() {
         val product: Product? = intent.getParcelableExtra("EXTRA_PRODUCT")
         product?.let { p ->
             product_name.text = p.name
-            product_price.text = getString(R.string.price) + p.price.toString()
+            product_description.text = p.description
+            val price = DecimalFormat("###0.00").format(p.price)
+            product_price.text = getString(R.string.price) + price
 
             add.setOnClickListener {
                 cartAction.addToCart(p)
-                cartCount()
+                updateCartCount()
                 Toast.makeText(this, "Item added to cart", Toast.LENGTH_SHORT).show()
             }
 
@@ -55,13 +58,13 @@ class ProductDetailActivity : AppCompatActivity() {
         val menuItem = menu.findItem(R.id.action_cart)
         val actionView: View = menuItem.actionView
         textCartItemCount = actionView.findViewById<View>(R.id.cart_badge) as TextView
-        cartCount()
+        updateCartCount()
         actionView.setOnClickListener { onOptionsItemSelected(menuItem) }
         return true
 
     }
 
-    private fun cartCount() {
+    private fun updateCartCount() {
         textCartItemCount?.text = cartAction.getCartCount().toString()
     }
 
