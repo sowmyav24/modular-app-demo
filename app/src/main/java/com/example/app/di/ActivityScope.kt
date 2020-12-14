@@ -1,4 +1,4 @@
-package com.example.app.module
+package com.example.app.di
 
 import javax.inject.Scope
 
