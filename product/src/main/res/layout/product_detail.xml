@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-   <TextView
+   <com.google.android.material.textview.MaterialTextView
         android:id="@+id/product_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/image"
         tools:text="Grapes- Green without seeds" />
 
-   <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/product_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/image"
        tools:text="₹ 100" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/product_description_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/product_name"
         android:text="Description" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/product_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
