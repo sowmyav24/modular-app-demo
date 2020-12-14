@@ -5,7 +5,7 @@ import com.example.cart.navigator.outward.CartOutwardNavigator
 import dagger.Module
 import dagger.Provides
 
-@Module
+@Module(includes = [CartActivityModule::class])
 class CartModule {
 
     @Provides

@@ -8,6 +8,6 @@ import dagger.android.ContributesAndroidInjector
 abstract class ProductDetailActivityModule {
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = [ProductModule::class])
+    @ContributesAndroidInjector
     abstract fun contributeProductDetailActivity(): ProductDetailActivity
 }

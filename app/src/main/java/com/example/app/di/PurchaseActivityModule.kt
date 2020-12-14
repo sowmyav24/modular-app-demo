@@ -7,6 +7,6 @@ import dagger.android.ContributesAndroidInjector
 @Module
 abstract class PurchaseActivityModule {
     @ActivityScope
-    @ContributesAndroidInjector(modules = [PurchaseModule::class])
+    @ContributesAndroidInjector
     abstract fun contributePurchaseActivity(): PurchaseActivity
 }

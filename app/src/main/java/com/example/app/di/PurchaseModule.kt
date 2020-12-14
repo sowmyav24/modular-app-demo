@@ -6,7 +6,7 @@ import com.example.purchase.navigator.outward.PurchaseOutwardNavigator
 import dagger.Module
 import dagger.Provides
 
-@Module
+@Module(includes = [PurchaseActivityModule::class])
 class PurchaseModule {
     @Provides
     fun providePurchaseOutwardRouter(purchaseOutwardRouter: PurchaseOutwardRouter) : PurchaseOutwardNavigator {
