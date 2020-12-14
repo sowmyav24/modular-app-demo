@@ -12,9 +12,9 @@ import com.example.product.R
 import com.example.product.action.CartAction
 import com.example.product.domain.Product
 import com.example.product.navigator.outward.ProductOutwardNavigator
+import com.example.util.formatPrice
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.product_detail.*
-import java.text.DecimalFormat
 import javax.inject.Inject
 
 
@@ -36,7 +36,7 @@ class ProductDetailActivity : AppCompatActivity() {
         product?.let { p ->
             product_name.text = p.name
             product_description.text = p.description
-            val price = DecimalFormat("###0.00").format(p.price)
+            val price = formatPrice(p.price)
             product_price.text = getString(R.string.price) + price
 
             add.setOnClickListener {

@@ -8,4 +8,5 @@
     <string name="netbanking">Netbanking</string>
     <string name="complete_shopping">Complete shopping</string>
     <string name="product_name">Product name</string>
+    <string name="total">Total: %1$s</string>
 </resources>

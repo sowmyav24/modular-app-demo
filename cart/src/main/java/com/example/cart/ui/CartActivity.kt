@@ -7,11 +7,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cart.R
+import com.example.cart.domain.CartProduct
+import com.example.cart.domain.totalCost
 import com.example.cart.navigator.outward.CartOutwardNavigator
 import com.example.cart.viewmodel.CartViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_cart.*
-import java.text.DecimalFormat
 import javax.inject.Inject
 
 class CartActivity : AppCompatActivity() {
@@ -24,18 +25,26 @@ class CartActivity : AppCompatActivity() {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+
         viewModel = ViewModelProvider(this).get(CartViewModel::class.java)
-        val products = findViewById<View>(R.id.cart_products) as RecyclerView
         val cartItems = viewModel.getAllCartItems()
+
+        setCartProductsView(cartItems)
+        cost.text = "${getString(R.string.total_cost)}${viewModel.getTotalCost()}"
+
+        buy_now.setOnClickListener {
+            cartOutwardNavigator.startPurchase(this, cartItems, totalCost())
+        }
+    }
+
+    private fun setCartProductsView(cartItems: List<CartProduct>): List<CartProduct> {
+        val products = findViewById<View>(R.id.cart_products) as RecyclerView
+
         val adapter = CartAdapter(
             cartItems
         )
         products.adapter = adapter
         products.layoutManager = LinearLayoutManager(this)
-        val totalCost = DecimalFormat("###0.00").format( viewModel.getTotalCost())
-        cost.text = "${getString(R.string.total_cost)}$totalCost"
-        buy_now.setOnClickListener {
-            cartOutwardNavigator.startPurchase(this, cartItems)
-        }
+        return cartItems
     }
 }

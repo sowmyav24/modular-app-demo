@@ -5,4 +5,4 @@ import kotlinx.android.parcel.Parcelize
 import java.math.BigDecimal
 
 @Parcelize
-data class PurchaseProduct(val name: String, val price: BigDecimal): Parcelable
+data class PurchaseProduct(val names: List<String>, val total: BigDecimal): Parcelable

@@ -3,6 +3,7 @@ package com.example.product.ui
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.product.domain.Product
+import com.example.util.formatPrice
 import kotlinx.android.synthetic.main.product_item.view.*
 import java.text.DecimalFormat
 
@@ -17,6 +18,6 @@ class ProductViewHolder(itemView: View, onClick: (Int) -> Unit) :
 
     fun setData(product: Product) {
         itemView.product_name.text = product.name
-        itemView.product_price.text = DecimalFormat("###0.00").format(product.price)
+        itemView.product_price.text = formatPrice(product.price)
     }
 }

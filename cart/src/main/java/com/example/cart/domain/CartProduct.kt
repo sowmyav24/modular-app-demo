@@ -20,3 +20,9 @@ fun addItem(cartItem: CartProduct) {
 fun removeItems() {
     cartItems = mutableListOf()
 }
+
+fun totalCost(): BigDecimal {
+    return getAllItems()
+        .map { it.price.multiply(BigDecimal(it.quantity)) }
+        .fold(BigDecimal.ZERO, BigDecimal::add)
+}

@@ -1,30 +1,27 @@
 package com.example.app.router
 
 import android.content.Context
-import android.content.Intent
 import com.example.cart.domain.CartProduct
+import com.example.cart.domain.totalCost
 import com.example.cart.navigator.outward.CartOutwardNavigator
 import com.example.purchase.domain.PurchaseProduct
 import com.example.purchase.navigator.inward.PurchaseInwardNavigator
-import com.example.purchase.ui.PurchaseActivity
+import java.math.BigDecimal
 import javax.inject.Inject
 
-class CartOutwardRouter @Inject constructor(var purchaseInwardNavigator: PurchaseInwardNavigator):
+class CartOutwardRouter @Inject constructor(var purchaseInwardNavigator: PurchaseInwardNavigator) :
     CartOutwardNavigator {
 
     override fun startPurchase(
         context: Context,
-        cartItems: List<CartProduct>
+        cartItems: List<CartProduct>,
+        total: BigDecimal
     ) {
-        val intent = Intent(context, PurchaseActivity::class.java)
-        val purchaseProducts = cartItems.map {
-            it.toPurchaseProduct()
-        } as ArrayList<PurchaseProduct>
-        intent.putParcelableArrayListExtra("PURCHASE_PRODUCT_EXTRA", purchaseProducts)
-        purchaseInwardNavigator.startPurchase(context, intent)
-    }
-
-    private fun CartProduct.toPurchaseProduct(): PurchaseProduct {
-        return PurchaseProduct(name, price)
+        val names = cartItems.map { it.name }
+        val purchaseProduct = PurchaseProduct(
+            names = names,
+            total = total
+        )
+        purchaseInwardNavigator.startPurchase(context, purchaseProduct)
     }
 }
